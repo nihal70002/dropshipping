@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CreditCard, Truck, Shield, Check } from 'lucide-react';
-import { useCart } from '../context/CartContext';
+import { useCart } from '../../context/CartContext';
 
 export default function Checkout() {
   const { cart, getTotalPrice, clearCart } = useCart();

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import ProductCard from '../components/ProductCard';
-import { products, categories } from '../data/products';
-import { Search, Filter, SlidersHorizontal } from 'lucide-react';
+import ProductCard from '../../components/ProductCard';
+import { products, categories } from '../../data/products';
+import { Search, Filter } from 'lucide-react';
 
 export default function Products() {
   const [selectedCategory, setSelectedCategory] = useState('All Products');

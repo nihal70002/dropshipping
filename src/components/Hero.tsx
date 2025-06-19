@@ -1,130 +1,86 @@
-
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import { ArrowRight, Star, Truck, Shield, Headphones } from 'lucide-react';
 
-export default function Footer() {
+export default function Hero() {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div>
-            <Link to="/" className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">DS</span>
-              </div>
-              <span className="text-xl font-bold">DropStore</span>
-            </Link>
-            <p className="text-gray-400 mb-6">
-              Your trusted partner for premium dropshipping products. Quality guaranteed, satisfaction delivered.
+    <div className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10"></div>
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="text-center lg:text-left">
+            <h1 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
+              Premium Products
+              <span className="block text-orange-400">Delivered Fast</span>
+            </h1>
+            <p className="mt-6 text-xl text-gray-300 max-w-2xl">
+              Discover our curated collection of high-quality products at unbeatable prices. 
+              From electronics to home essentials, we've got everything you need.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors duration-200">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors duration-200">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors duration-200">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors duration-200">
-                <Youtube className="w-5 h-5" />
-              </a>
+            
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Link
+                to="/products"
+                className="inline-flex items-center px-8 py-4 bg-orange-600 text-white font-semibold rounded-full hover:bg-orange-700 transition-all duration-200 transform hover:scale-105 shadow-lg"
+              >
+                Shop Now
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+              <button className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-slate-900 transition-all duration-200">
+                Learn More
+              </button>
+            </div>
+
+            <div className="mt-12 flex items-center justify-center lg:justify-start space-x-8">
+              <div className="flex items-center space-x-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                ))}
+                <span className="ml-2 text-white">4.8/5 Rating</span>
+              </div>
+              <div className="text-white">
+                <span className="font-bold text-2xl">10k+</span>
+                <span className="ml-1">Happy Customers</span>
+              </div>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
-            <ul className="space-y-4">
-              <li>
-                <Link to="/products" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  Products
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  FAQ
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Customer Service */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Customer Service</h3>
-            <ul className="space-y-4">
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  Shipping Info
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  Returns & Exchanges
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  Size Guide
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  Privacy Policy
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Contact Info</h3>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-5 h-5 text-orange-400" />
-                <span className="text-gray-400">123 Business St, City, State 12345</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-orange-400" />
-                <span className="text-gray-400">+1 (555) 123-4567</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-orange-400" />
-                <span className="text-gray-400">support@dropstore.com</span>
-              </div>
-            </div>
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-500 rounded-3xl transform rotate-6 opacity-20"></div>
+            <img
+              src="https://images.pexels.com/photos/5632371/pexels-photo-5632371.jpeg"
+              alt="Premium Products"
+              className="relative rounded-3xl shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500"
+            />
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
-            © 2025 DropStore. All rights reserved.
-          </p>
-          <div className="mt-4 md:mt-0 flex space-x-6">
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
-              Terms of Service
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors duration-200">
-              Cookie Policy
-            </a>
+        {/* Features */}
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex items-center space-x-4 p-6 bg-white/10 backdrop-blur-sm rounded-2xl">
+            <Truck className="w-8 h-8 text-orange-400" />
+            <div>
+              <h3 className="font-semibold text-white">Free Shipping</h3>
+              <p className="text-gray-300 text-sm">On orders over $50</p>
+            </div>
+          </div>
+          <div className="flex items-center space-x-4 p-6 bg-white/10 backdrop-blur-sm rounded-2xl">
+            <Shield className="w-8 h-8 text-orange-400" />
+            <div>
+              <h3 className="font-semibold text-white">Secure Payment</h3>
+              <p className="text-gray-300 text-sm">100% protected checkout</p>
+            </div>
+          </div>
+          <div className="flex items-center space-x-4 p-6 bg-white/10 backdrop-blur-sm rounded-2xl">
+            <Headphones className="w-8 h-8 text-orange-400" />
+            <div>
+              <h3 className="font-semibold text-white">24/7 Support</h3>
+              <p className="text-gray-300 text-sm">Always here to help</p>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
   );
 }
